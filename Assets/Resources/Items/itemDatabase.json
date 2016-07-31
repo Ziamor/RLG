@@ -3,9 +3,9 @@
         "itemName": "Old Sword",
         "itemDesc": "An old, beat up sword.",
         "itemValue": 5,
-        "itemType": 0,
+        "itemType": "EQUIPMENT",
         "spriteID": 12,
-        "slotType": 0,
+        "slotType": "MAIN_HAND",
         "damage": 10,
         "speed": 1.5
     },
@@ -13,9 +13,9 @@
         "itemName": "Steel Sword",
         "itemDesc": "This sword is forged from steel.",
         "itemValue": 25,
-        "itemType": 0,
+        "itemType": "EQUIPMENT",
         "spriteID": 13,
-        "slotType": 0,
+        "slotType": "MAIN_HAND",
         "damage": 15,
         "speed": 1
     },
@@ -23,9 +23,9 @@
         "itemName": "Infernal Sword",
         "itemDesc": "This sword is forged from infernal metal.",
         "itemValue": 100,
-        "itemType": 0,
+        "itemType": "EQUIPMENT",
         "spriteID": 14,
-        "slotType": 0,
+        "slotType": "MAIN_HAND",
         "damage": 20,
         "speed": 0.75
     }

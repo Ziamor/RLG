@@ -11,14 +11,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D player_rigidbody2D;
     private Animator player_animator;
     //private Collider2D player_collider;
-    private InteractableList interactableList;
+    //private InteractableList interactableList;
     private BaseInventory playerInventory;
 
-    private Text potion_counter;
-
-    private GameObject interactable;
-
-    private int potions;
     private Vector2 dir;
 
     void Start()
@@ -26,16 +21,10 @@ public class Player : MonoBehaviour
         player_rigidbody2D = this.GetComponent<Rigidbody2D>();
         player_animator = this.GetComponent<Animator>();
         //player_collider = this.GetComponent<Collider2D>();
-        interactableList = this.GetComponent<InteractableList>();
+        //interactableList = this.GetComponent<InteractableList>();
         playerInventory = this.GetComponent<BaseInventory>();
 
         player_rigidbody2D.freezeRotation = true;
-
-        potion_counter = GameObject.Find("Potion_Counter").GetComponent<Text>();
-
-        interactable = null;
-
-        potions = 0;
         
         playerInventory.AddItemToInventory("Old Sword");
         playerInventory.AddItemToInventory("Steel Sword");
