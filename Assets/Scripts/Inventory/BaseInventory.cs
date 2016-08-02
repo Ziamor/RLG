@@ -42,7 +42,6 @@ public class BaseInventory : MonoBehaviour
         for (int i = 0; i < inventoryItems.Length; i++)
             if (inventoryItems[i] == null)
             {
-                Debug.Log("Added new item to inventory, " + item.itemName);
                 inventoryItems[i] = item;
                 return true;
             }
@@ -68,5 +67,31 @@ public class BaseInventory : MonoBehaviour
     public BaseItem[] GetInventoryItems()
     {
         return inventoryItems;
+    }
+
+    public bool MoveItem(int origin, int dest)
+    {
+        // Make sure the origin slot and dest slot are within inv bounds
+        if (origin > inventoryItems.Length || dest > inventoryItems.Length)
+            return false;
+        // If the orgin slot is empty, don't do any moving
+        if (inventoryItems[origin] == null)
+            return false;
+
+        // If dest slot is empty, simply move the item
+        if (inventoryItems[dest] == null)
+        {
+            inventoryItems[dest] = inventoryItems[origin];
+            inventoryItems[origin] = null;
+        }
+        // If dest isn't empty, we need to swap
+        else {
+            BaseItem temp = inventoryItems[dest];
+            inventoryItems[dest] = inventoryItems[origin];
+            inventoryItems[origin] = temp;
+        }
+
+
+        return true;
     }
 }

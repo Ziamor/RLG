@@ -9,6 +9,9 @@ public class InventoryUI : MonoBehaviour
     void Awake()
     {
         defaultPos = inventoryWindow.GetComponent<RectTransform>().anchoredPosition;
+
+        // Start the window closed
+        inventoryWindow.SetActive(false);
     }
 
     // Update is called once per frame
