@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
         playerInventory.AddItemToInventory("Old Sword");
         playerInventory.AddItemToInventory("Steel Sword");
         playerInventory.AddItemToInventory("Infernal Sword");
+        playerInventory.AddItemToInventory("Hematite");
+        playerInventory.AddItemToInventory("Copper Ore");
     }
 
     void Update()

@@ -28,5 +28,39 @@
         "slotType": "MAIN_HAND",
         "damage": 20,
         "speed": 0.75
+    },
+    {
+        "itemName": "Hematite",
+        "itemDesc": "Hematite is a grey mineral, made up of around 70% iron oxide. Due to thigh abundance of itron, Hematite makes for a good source of iron.",
+        "itemValue": 5,
+        "itemType": "INGREDIENT",
+        "spriteID": 16,
+        "ingredientType": "ORE",
+        "purity": 0.7
+    },
+    {
+        "itemName": "Iron Bar",
+        "itemDesc": "A bar made from iron ore.",
+        "itemValue": 6,
+        "itemType": "INGREDIENT",
+        "spriteID": 17,
+        "ingredientType": "METAL"
+    },
+    {
+        "itemName": "Copper Ore",
+        "itemDesc": "Rock containing Copper.",
+        "itemValue": 4,
+        "itemType": "INGREDIENT",
+        "spriteID": 18,
+        "ingredientType": "ORE",
+        "purity": 0.4
+    },
+    {
+        "itemName": "Copper Bar",
+        "itemDesc": "A bar made from Copper Ore",
+        "itemValue": 5,
+        "itemType": "INGREDIENT",
+        "spriteID": 19,
+        "ingredientType": "METAL"
     }
 ]

@@ -1,0 +1,17 @@
+[{
+	"recipeName": "Smelt Iron",
+	"recipeDesc": "Smelt Iron ore into a bar of Iron",
+	"recipeProductID": "Iron Bar",
+	"recipeInputs": [{
+		"itemID": "Hematite",
+		"amount": 1
+	}]
+}, {
+	"recipeName": "Smelt Copper",
+	"recipeDesc": "Smelt Copper ore into a bar of Copper",
+	"recipeProductID": "Copper Bar",
+	"recipeInputs": [{
+		"itemID": "Copper Ore",
+		"amount": 1
+	}]
+}]

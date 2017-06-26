@@ -1,0 +1,44 @@
+Mono path[0] = 'C:/Users/Public/Documents/Unity Projects/RLG/RLG_Data/Managed'
+Mono path[1] = 'C:/Users/Public/Documents/Unity Projects/RLG/RLG_Data/Mono'
+Mono config path = 'C:/Users/Public/Documents/Unity Projects/RLG/RLG_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Public/Documents/Unity Projects/RLG/RLG_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55006
+Multi-casting "[IP] 192.168.2.22 [Port] 55006 [Flags] 3 [Guid] 3664360739 [EditorId] 1415301807 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-2UEPQSQ) [Debug] 1" to [225.0.0.222:54997]...
+Waiting for connection from host on [192.168.2.22:55006]...
+PlayerConnection accepted from [192.168.2.22] handle:0x2f8
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56739
+PlayerConnection already initialized - listening to [192.168.2.22:55006]
+Initialize engine version: 5.3.5f1 (960ebf59018a)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 760 (ID=0x1187)
+    Vendor:   NVIDIA
+    VRAM:     2017 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\Newtonsoft.Json.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\Newtonsoft.Json.dll into Unity Child Domain
+- Completed reload, in  0.068 seconds
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.738259 ms
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\System.Runtime.Serialization.dll (this message is harmless)
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\System.Xml.Linq.dll (this message is harmless)
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\System.Xml.dll (this message is harmless)
+Platform assembly: C:\Users\Public\Documents\Unity Projects\RLG\RLG_Data\Managed\System.Data.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2ac4 -> priority: 1 
+  Thread -> id: 33c0 -> priority: 1 
+Waiting for finish

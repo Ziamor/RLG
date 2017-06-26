@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 24242309c3cb4dc46990e5e443fd37c1
-timeCreated: 1469733277
+timeCreated: 1470523142
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -20,6 +20,10 @@ TextureImporter:
     21300026: Objects_13
     21300028: Objects_14
     21300030: Objects_15
+    21300032: Objects_16
+    21300034: Objects_17
+    21300036: Objects_18
+    21300038: Objects_19
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -70,7 +74,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -85,7 +89,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -100,7 +104,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -120,7 +124,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -140,7 +144,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -158,7 +162,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -175,7 +179,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -194,7 +198,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -215,7 +219,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -231,7 +235,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -250,7 +254,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -270,7 +274,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -290,7 +294,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -310,7 +314,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -330,7 +334,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -350,7 +354,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -364,6 +368,86 @@ TextureImporter:
         - {x: 13, y: -13}
         - {x: 14, y: -9}
         - {x: 14, y: 13}
+    - name: Objects_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 12}
+        - {x: -16, y: 8}
+        - {x: -16, y: -4}
+        - {x: -10, y: -9}
+        - {x: 8, y: -9}
+        - {x: 13, y: 0}
+        - {x: 13, y: 7}
+        - {x: 7, y: 12}
+    - name: Objects_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 11}
+        - {x: -13, y: 8}
+        - {x: -15, y: 3}
+        - {x: -15, y: -7}
+        - {x: -11, y: -12}
+        - {x: -1, y: -12}
+        - {x: 12, y: -9}
+        - {x: 13, y: -4}
+        - {x: 13, y: 5}
+        - {x: 9, y: 11}
+    - name: Objects_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 12}
+        - {x: -16, y: 8}
+        - {x: -16, y: -4}
+        - {x: -10, y: -9}
+        - {x: 8, y: -9}
+        - {x: 13, y: 0}
+        - {x: 13, y: 7}
+        - {x: 7, y: 12}
+    - name: Objects_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 11}
+        - {x: -13, y: 8}
+        - {x: -15, y: 3}
+        - {x: -15, y: -7}
+        - {x: -11, y: -12}
+        - {x: -1, y: -12}
+        - {x: 12, y: -9}
+        - {x: 13, y: -4}
+        - {x: 13, y: 5}
+        - {x: 9, y: 11}
     outline: []
   spritePackingTag: 
   userData: 

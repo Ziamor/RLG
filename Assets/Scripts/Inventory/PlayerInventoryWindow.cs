@@ -1,45 +1,35 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
-public class PlayerInventoryWindow : MonoBehaviour
+public class PlayerInventoryWindow : InventoryWindow
 {
 
     public RectTransform ItemSlotArea;
-    public BaseInventory PlayerInventory;
     public int col_length = 4;
     public int page_count = 16;
     public GameObject itemSlotPref;
+    //TODO, decide whether toogle group is helpfull
     public ToggleGroup itemSlotToggleGroup;
-    public GameObject dragIcon;
-
-    private bool iconIsDragging;
-    private RectTransform dragIconRectTreansform;
-    private Vector3 dragIconOffset;
 
     // Use this for initialization
     void Start()
     {
-        dragIconRectTreansform = dragIcon.GetComponent<RectTransform>();
-
-        // Stops the drag icon from blocking OnDrop
-        CanvasGroup group = dragIcon.AddComponent<CanvasGroup>();
-        group.blocksRaycasts = false;
-
         SetUpWidnow();
+        inventory.OnInventoryChanged += OnInventoryChanged;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (iconIsDragging)
-            dragIconRectTreansform.position = Input.mousePosition + dragIconOffset;
+        
     }
 
     public void SetUpWidnow()
     {
-        dragIcon.SetActive(false);
-        iconIsDragging = false;
+        InventoryUI.Instance.dragIcon.SetActive(false);
+        InventoryUI.Instance.IconIsDragging = false;
 
         float x_Pos = ItemSlotArea.transform.position.x;
         float y_Pos = ItemSlotArea.transform.position.y;
@@ -48,7 +38,7 @@ public class PlayerInventoryWindow : MonoBehaviour
         GameObject itemSlot;
         GameObject itemIcon;
 
-        BaseItem[] inventoryItems = PlayerInventory.GetInventoryItems();
+        BaseItem[] inventoryItems = inventory.GetInventoryItems();
 
         for (int i = 0; i < page_count; i++)
         {
@@ -66,8 +56,9 @@ public class PlayerInventoryWindow : MonoBehaviour
             if (inventoryItems[i] != null)
             {
                 itemSlot.name = inventoryItems[i].itemName;
-                itemSlot.GetComponent<ItemSlot>().item = inventoryItems[i];
+                //itemSlot.GetComponent<ItemSlot>().item = inventoryItems[i];
                 itemSlot.GetComponent<ItemSlot>().invIndex = i;
+                itemSlot.GetComponent<ItemSlot>().parent = this;
 
                 itemIcon.SetActive(true);
                 itemIcon.GetComponent<Image>().sprite = inventoryItems[i].ItemIcon;
@@ -76,35 +67,26 @@ public class PlayerInventoryWindow : MonoBehaviour
             {
                 itemSlot.name = "Empty";
                 itemSlot.GetComponent<ItemSlot>().invIndex = i;
+                itemSlot.GetComponent<ItemSlot>().parent = this;
                 itemIcon.SetActive(false);
             }
         }
-    }
+    }    
 
-    public void StartIconDrag(BaseItem item, Vector3 offset)
-    {
-        if (item != null)
-        {
-            iconIsDragging = true;
-            dragIcon.SetActive(true);
-            dragIcon.GetComponent<Image>().sprite = item.ItemIcon;
-            dragIconOffset = offset;
-        }
-    }
 
-    public void StopIconDrag()
+    public override bool Move(ItemSlot source, ItemSlot dest)
     {
-        iconIsDragging = false;
-        dragIcon.SetActive(false);
-    }
-
-    public void MoveItem(int origin, int dest)
-    {
-        PlayerInventory.MoveItem(origin, dest);
+        bool success = inventory.MoveItem(source, dest);
         foreach (Transform child in transform.Find("InventorySlots"))
         {
             GameObject.Destroy(child.gameObject);
         }
+        SetUpWidnow();
+        return success;
+    }
+
+    private void OnInventoryChanged()
+    {
         SetUpWidnow();
     }
 }

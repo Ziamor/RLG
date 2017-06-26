@@ -5,17 +5,32 @@ using System;
 
 public class ItemSlot : MonoBehaviour, IDragHandler, IDropHandler, IBeginDragHandler, IEndDragHandler
 {
-    public BaseItem item;
+    //public BaseItem item;
     public int invIndex;
+    public InventoryWindow parent;
 
-    private PlayerInventoryWindow inventoryWindow;
+    public BaseItem Item
+    {
+        get
+        {
+            if (Inventory != null)
+                return Inventory.GetItem(invIndex);
+            return null;
+        }        
+    }
 
+    public BaseInventory Inventory
+    {
+        get
+        {
+            if (parent == null)
+                return null;
+            return parent.inventory;
+        }
+    }
     // Use this for initialization
     void Start()
     {
-        inventoryWindow = transform.parent.parent.gameObject.GetComponent<PlayerInventoryWindow>();
-        if (inventoryWindow == null)
-            Debug.LogError("Item slot can't find parent inventory window");
 
     }
 
@@ -26,27 +41,32 @@ public class ItemSlot : MonoBehaviour, IDragHandler, IDropHandler, IBeginDragHan
 
     public void OnBeginDrag(PointerEventData e)
     {
-        if (inventoryWindow != null)
-        {
-            Vector3 dragIconOffset = GetComponent<RectTransform>().position - Input.mousePosition;
-            inventoryWindow.StartIconDrag(item, dragIconOffset);
-        }
+        InventoryUI.Instance.StartIconDrag(Item);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (inventoryWindow != null)
-            inventoryWindow.StopIconDrag();
+        InventoryUI.Instance.StopIconDrag();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (parent == null)
+            return;
+
         if (eventData.pointerDrag != null)
         {
             ItemSlot origin = eventData.pointerDrag.GetComponent<ItemSlot>();
             if (origin == null)
                 return;
-            inventoryWindow.MoveItem(origin.invIndex, invIndex);
+            parent.Move(origin, this);
         }
+    }
+
+    public bool IsValidInventoryPosition()
+    {
+        if (invIndex > Inventory.Length)
+            return false;
+        return true;
     }
 }

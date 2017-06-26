@@ -16,7 +16,7 @@ public class ItemConverter : JsonConverter
         JObject jObject = JObject.Load(reader);
 
         // Create target object based on JObject
-        BaseItem target = Create(objectType, jObject);
+        BaseItem target = CreateItem(objectType, jObject);
 
         // Populate the object properties
         serializer.Populate(jObject.CreateReader(), target);
@@ -26,7 +26,7 @@ public class ItemConverter : JsonConverter
 
     public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {
-        BaseItem item = (BaseItem)value;
+        /*BaseItem item = (BaseItem)value;
 
         writer.WriteStartObject();
 
@@ -58,10 +58,11 @@ public class ItemConverter : JsonConverter
             writer.WritePropertyName("speed");
             writer.WriteValue(itemEquip.speed);
         }
-        writer.WriteEndObject();
+        writer.WriteEndObject();*/
+        Debug.LogError("Trying to convert items into JSON.");
     }
 
-    protected BaseItem Create(Type objectType, JObject jObject)
+    protected BaseItem CreateItem(Type objectType, JObject jObject)
     {
         if (jObject["itemType"] != null)
         {
@@ -69,12 +70,33 @@ public class ItemConverter : JsonConverter
             {
                 case "EQUIPMENT":
                     return new BaseEquipment();
+                case "INGREDIENT":
+                    return CreateIngredient(objectType, jObject);
                 default:
                     Debug.Log("Error reading item type from JSON");
                     return BaseItem.undefinedItem;
             }
         }
         Debug.Log("Error reading item type from JSON");
+        return BaseItem.undefinedItem;
+    }
+
+    protected BaseItem CreateIngredient(Type objectType, JObject jObject)
+    {
+        if (jObject["ingredientType"] != null)
+        {
+            switch (jObject["ingredientType"].ToString())
+            {
+                case "ORE":
+                    return new BaseOre();
+                case "METAL":
+                    return new BaseIngredient();
+                default:
+                    Debug.Log("Error reading ingredient type from JSON");
+                    return BaseItem.undefinedItem;
+            }
+        }
+        Debug.Log("Error reading ingredient type from JSON");
         return BaseItem.undefinedItem;
     }
 }

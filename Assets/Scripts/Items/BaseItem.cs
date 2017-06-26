@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using Newtonsoft.Json;
 
-public enum ItemType { UNTYPED, EQUIPMENT, CONSUMABLE, CRAFTING, KEY };
+public enum ItemType { UNTYPED, EQUIPMENT, CONSUMABLE, INGREDIENT, KEY };
 
 [JsonConverter(typeof(ItemConverter))]
 public class BaseItem

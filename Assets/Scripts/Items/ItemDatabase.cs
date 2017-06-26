@@ -5,10 +5,44 @@ using Newtonsoft.Json;
 
 public class ItemDatabase : MonoBehaviour
 {
+    private static ItemDatabase instance;
+
     public TextAsset itemsJson;
     private Dictionary<string, BaseItem> items;
- 
+    private bool itemsLoaded = false;
+
+    private ItemDatabase() { }
+
+    public static ItemDatabase Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = GameObject.FindObjectOfType<ItemDatabase>() as ItemDatabase;
+            return instance;
+        }
+    }
+
+    public bool ItemsLoaded
+    {
+        get { return itemsLoaded; }
+    }
+
     void Awake()
+    {
+        if (!itemsLoaded)
+        {
+            Load();
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void Load()
     {
         items = new Dictionary<string, BaseItem>();
         /*BaseEquipment oldSword = new BaseEquipment();
@@ -21,19 +55,14 @@ public class ItemDatabase : MonoBehaviour
         oldSword.slotType = SlotType.MAIN_HAND;
         items.Add(oldSword.itemName, oldSword);*/
 
-        BaseItem[] weapons = JsonConvert.DeserializeObject<BaseItem[]>(itemsJson.text);
-        for (int i = 0; i < weapons.Length; i++)
-            AddNewItem(weapons[i]);        
+        BaseItem[] itemsFromJson = JsonConvert.DeserializeObject<BaseItem[]>(itemsJson.text);
+        for (int i = 0; i < itemsFromJson.Length; i++)
+            AddNewItem(itemsFromJson[i]);
 
+        itemsLoaded = true;
         //Debug.Log(JsonConvert.SerializeObject(oldSword));
         //BaseItem itemsTest = JsonConvert.DeserializeObject<BaseItem>(itemsJson.text);
-       // Debug.Log(((BaseEquipment)itemsTest).damage);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        // Debug.Log(((BaseEquipment)itemsTest).damage);
     }
 
     public void AddNewItem(BaseItem newItem)
