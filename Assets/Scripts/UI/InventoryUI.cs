@@ -7,6 +7,7 @@ public class InventoryUI : MonoBehaviour
     private static InventoryUI instance;
 
     public GameObject inventoryWindow;
+    public GameObject smelterWindow;
     public GameObject dragIcon;
 
     private Vector3 defaultPos;
@@ -37,6 +38,7 @@ public class InventoryUI : MonoBehaviour
 
         // Start the window closed
         inventoryWindow.SetActive(false);
+        smelterWindow.SetActive(false);
         dragIcon.SetActive(false);
     }
 
@@ -83,5 +85,13 @@ public class InventoryUI : MonoBehaviour
     {
         iconIsDragging = false;
         dragIcon.SetActive(false);
+    }
+
+    public void ShowSmelter(bool active)
+    {
+        if(smelterWindow != null)
+        {
+            smelterWindow.gameObject.SetActive(active);
+        }
     }
 }

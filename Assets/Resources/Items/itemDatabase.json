@@ -62,5 +62,13 @@
         "itemType": "INGREDIENT",
         "spriteID": 19,
         "ingredientType": "METAL"
+    },
+    {
+        "itemName": "Strawberry",
+        "itemDesc": "Druit from a Strawberry plant.",
+        "itemValue": 5,
+        "itemType": "INGREDIENT",
+        "spriteID": 26,
+        "ingredientType": "METAL"
     }
 ]

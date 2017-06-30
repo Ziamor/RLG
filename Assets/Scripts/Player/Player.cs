@@ -64,4 +64,9 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void GiveItem(string item)
+    {
+        playerInventory.AddItemToInventory(item);
+    }
 }

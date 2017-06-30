@@ -13,6 +13,8 @@ public class SmelterInventoryWindow : InventoryWindow
     private GameObject inputSlotIcon;
     private GameObject outputSlotIcon;
 
+    public ProgressBar progressBar;
+
     // Use this for initialization
     void Start()
     {
@@ -23,8 +25,8 @@ public class SmelterInventoryWindow : InventoryWindow
         }
         inventory.OnInventoryChanged += OnInventoryChanged;
 
-        inputSlotIcon = inputSlot.transform.FindChild("ItemIcon").gameObject;
-        outputSlotIcon = outputSlot.transform.FindChild("ItemIcon").gameObject;
+        inputSlotIcon = inputSlot.transform.Find("ItemIcon").gameObject;
+        outputSlotIcon = outputSlot.transform.Find("ItemIcon").gameObject;
 
         inputSlot.invIndex = 0;
         outputSlot.invIndex = 1;
@@ -72,13 +74,31 @@ public class SmelterInventoryWindow : InventoryWindow
         if (recipe != null)
         {
             inventory.RemoveItem(0);
-            inventory.AddItemToInventory(recipe.RecipeProduct, 1);
             OnInventoryChanged();
+            StartCoroutine(Smelt(5,recipe,1));            
         }
+
+        if (progressBar != null)
+            progressBar.SetProgress(0.5f);
     }
 
     private void OnInventoryChanged()
     {
         SetUpWidnow();
+    }
+
+    IEnumerator Smelt(float t, Recipe recipe, int qty)
+    {
+        float curTime = 0;
+
+        while (curTime < 5f)
+        {
+            progressBar.SetProgress(curTime / t);
+            curTime += Time.smoothDeltaTime;
+            yield return null;
+        }
+
+        inventory.AddItemToInventory(recipe.RecipeProduct, qty);
+        OnInventoryChanged();
     }
 }

@@ -39,6 +39,8 @@ public class BaseInventory : MonoBehaviour
             if (inventoryItems[i] == null)
             {
                 inventoryItems[i] = item;
+                if (OnInventoryChanged != null)
+                    this.OnInventoryChanged();
                 return true;
             }
         // No free spot was found, the inventory is full
@@ -52,6 +54,7 @@ public class BaseInventory : MonoBehaviour
         if (inventoryItems[index] != null)
             return false;
         inventoryItems[index] = item;
+        this.OnInventoryChanged();
         return true;
     }
 

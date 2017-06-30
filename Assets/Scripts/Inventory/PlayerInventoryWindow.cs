@@ -52,7 +52,7 @@ public class PlayerInventoryWindow : InventoryWindow
             itemSlot.transform.SetParent(inventorySlots.transform);
             itemSlot.transform.position = new Vector3(new_x, new_y, 0);
 
-            itemIcon = itemSlot.transform.FindChild("ItemIcon").gameObject;
+            itemIcon = itemSlot.transform.Find("ItemIcon").gameObject;
             if (inventoryItems[i] != null)
             {
                 itemSlot.name = inventoryItems[i].itemName;
